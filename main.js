@@ -21,18 +21,18 @@ $(document).ready(function() {
         clearlast()
       }
     }
-    else if ($(this).hasClass("operator")){
-      lastvalueHistory(operator)
-      switch(operator) {
-        case "+":
-        case "-":
-        case "*":
-        case "÷":
-        alert("Please don't put two operators in a row");
-        break;
-      }
-    }
-    else if (/^[0-9.]/.test(entry.text()) === false) {
+    // else if ($(this).hasClass("operator")){
+    //   lastvalueHistory(operator)
+    //   switch(operator) {
+    //     case "+":
+    //     case "-":
+    //     case "*":
+    //     case "÷":
+    //     alert("Please don't put two operators in a row");
+    //     break;
+    //   }
+    // }
+    else if (!/^[0-9.]/.test(entry.text())) {
       entry.html(btnVal);
       history.append(btnVal);
     }
@@ -66,3 +66,8 @@ $(document).ready(function() {
     history.html(joinArr);
   }
 });
+
+//
+// Bugs:
+// - once you press = and add to the number it adds to the number but you can't recalculate after that.
+// - when you try to clear one number
