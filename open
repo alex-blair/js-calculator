@@ -1,0 +1,5 @@
+
+
+  var history = "this string has a = in it"
+
+  if (history.includes("=")) {console.log("It's there alright!"))
